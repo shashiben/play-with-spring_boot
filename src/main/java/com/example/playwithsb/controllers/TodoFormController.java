@@ -3,6 +3,7 @@ package com.example.playwithsb.controllers;
 import com.example.playwithsb.models.TodoItem;
 import com.example.playwithsb.repositories.TodoItemRepository;
 import java.time.Instant;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +37,11 @@ public class TodoFormController {
   @GetMapping("/create-todo-item")
   public String showCreateItemForm(TodoItem todoItem) {
     return "create-todo-item";
+  }
+
+  @GetMapping("/error")
+  public String showError(HttpServletResponse response, Model model) {
+    return "error";
   }
 
   @PostMapping("/todo/{id}")
