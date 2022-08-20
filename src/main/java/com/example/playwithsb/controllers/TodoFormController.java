@@ -33,6 +33,11 @@ public class TodoFormController {
     return "edit-todo-item";
   }
 
+  @GetMapping("/create-todo-item")
+  public String showCreateItemForm(TodoItem todoItem) {
+    return "create-todo-item";
+  }
+
   @PostMapping("/todo/{id}")
   public String updateTodoItem(
     @PathVariable("id") long id,
